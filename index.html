@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Skip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="title">C-Skip</h1>
+
+    <div id="glass-container">
+        <div id="calc-screen" class="shown">
+            <label for="select-batch" id="bat-label">Choose your Batch</label>
+            <select name="batch" id="select-batch">
+                <option value="cseB">CSE B</option>
+            </select>
+            <label for="select-subject" id="sub-label">Choose a Subject</label>
+            <select name="subject" id="select-subject">
+                <option value="oop">Object Oriented Programming</option>
+                <option value="uid">User Interface Design</option>
+                <option value="discrete">Discrete Mathematics</option>
+                <option value="linear">Linear Algebra</option>
+                <option value="physics">Modern Physics</option>
+                <option value="adm">ADM</option>
+                <option value="maom">MAOM</option>
+                <option value="mech">Mechanical Workshop</option>
+            </select>
+
+            <input type="text" id="skipped" placeholder="Hours Skipped.." autocomplete="off">
+            <button id="calculate-button">Calculate</button>
+        </div>
+
+        <div id="detail-screen" class="hidden">
+            <button id="back-button"></button>
+            <h2 id="main-label">Subject</h2>
+
+            <div class="stats-row">
+                <div id="attendence" class="stat-box">
+                    <h3 id="attendence-label">Attendance</h3>
+                    <div class="progress-container">
+                        <svg viewBox="0 0 250 250">
+                            <circle class="progress-bg" cx="125" cy="125" r="110"></circle>
+                            <circle id="attendence-circ" class="prog-circ" cx="125" cy="125" r="110"></circle>
+                        </svg>
+                        <div class="progress-text" id="attendence-text">0%</div>
+                    </div>
+                    <span id="attendence-info"></span>
+                </div>
+
+                <div id="skips-left" class="stat-box">
+                    <h3 id="skips-label">Skips Used</h3>
+                    <div class="progress-container">
+                        <svg viewBox="0 0 250 250">
+                            <circle class="progress-bg" cx="125" cy="125" r="110"></circle>
+                            <circle id="skips-circ" class="prog-circ" cx="125" cy="125" r="110"></circle>
+                        </svg>
+                        <div class="progress-text" id="skips-text">0/0</div>
+                    </div>
+                    <span id="skips-info"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p id="disclaimer"><b>Disclaimer:</b><br> This data is calculated from the academic calendar cross referencing with the latest time table, <br>
+        data produced can be inaccurate so use this data with caution.<br> tl;dr: I am not responsible for you getting FA'ed.
+    </p>
+    <p id="credit">Made by Akj <3 </p>
+
+    <script src="script.js"></script>
+    <script src="workSubject.js"></script>
+    <script src="workSubjectCurrent.js"></script>
+</body>
+</html>

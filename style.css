@@ -1,0 +1,211 @@
+/* --- Global & Layout --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient( to bottom, rgba(255,242,239,1) 11.1%, rgba(255,219,182,1) 37.5%, rgba(247,165,165,1) 54.3%, rgba(26,42,79,1) 98.3% );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: 'Lexend Deca', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden { display: none !important; }
+.shown { display: flex !important; }
+
+#glass-container {
+    width: 90%;
+    max-width: 1000px;
+    min-height: 66vh;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(20px) saturate(150%); 
+    -webkit-backdrop-filter: blur(20px) saturate(150%); 
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Typography --- */
+#title {
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+#credit {
+    font-weight: 300;
+    margin: 20px 0;
+}
+
+/* --- Detail Screen Layout --- */
+#detail-screen {
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-label {
+    font-weight: 900;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.stats-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 250px;
+}
+
+/* --- Progress Visualization --- */
+.progress-container {
+    position: relative;
+    width: clamp(180px, 30vw, 240px);
+    height: clamp(180px, 30vw, 240px);
+    margin: 15px 0;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+/* --- Form Controls --- */
+#calc-screen {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+}
+
+#disclaimer {
+    text-align: center;
+    margin: 0px 0;
+    color:rgb(90, 11, 11);
+}
+
+#sub-label, #bat-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#select-subject, #select-batch  {
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 18px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-family: 'Lexend Deca';
+    background: white;
+}
+
+#skipped {
+    width: 60%;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-family: 'Lexend Deca';
+    background: white;
+    align-self: center;
+    text-align: center;
+    outline: none;
+    transition: .4s;
+}
+
+#skipped:hover {
+    box-shadow: 0 0 10px #05a0ab;
+}
+
+#skipped:focus {
+    box-shadow: 0 0 20px #2306ff;
+}
+
+#calculate-button {
+    width: 150px;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid black;
+    transition: 0.3s;
+    align-self: center;
+}
+
+#calculate-button:hover {
+    border: 1px solid #142bff;
+    box-shadow: 0 0 10px #142bff;
+    color:#21128d
+}
+
+#back-button {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.3) url('back.png') no-repeat center;
+    background-size: 60%;
+    border: 1px solid white;
+    border-radius: 8px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+#back-button:hover {
+    box-shadow: 0 0 8px #123f8d;
+}
+
+/* --- SVG Circle Logic --- */
+circle {
+    fill: none;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+#attendence-info, #skips-info {
+    font-size: 35px;
+}
+
+.progress-bg { stroke: rgb(18, 18, 39); stroke-width: 20; }
+.prog-circ { stroke-linecap: round; transition: stroke-dashoffset 2s ease; stroke-width: 18; }
+
+#attendence-circ { stroke: #4caf50; }
+#skips-circ { stroke: #ff5722; }
+
+
+@media (max-width: 600px) {
+    #glass-container { padding: 20px; width: 95%; }
+    .stat-box { min-width: 100%; }
+}
