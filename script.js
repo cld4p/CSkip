@@ -65,7 +65,7 @@ function calculateHours(){
     if(val<0 || val==''){
         val=0;
     }
-    var selSub = subListB[subject];
+    var selSub = subListB[subject] - 10;
 
     if(batchInput.value == "cseB"){
         selSub.value == subListB[subject];
