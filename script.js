@@ -71,6 +71,8 @@ function calculateHours(){
         selSub.valueOf == subListB[subject];
     } else if(batchInput.value == "cseA") {
         selSub.valueOf == subListA[subject];
+    } else if(batchInput.value == "cseD") {
+        selSub.valueOf == subListD[subject];
     }
 
     val = Math.min(val,selSub);

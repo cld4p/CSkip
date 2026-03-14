@@ -19,3 +19,14 @@ var subListA = {
     "maom": 15,
     "mech": 12
 }
+
+var subListD = {
+    "oop": 71,
+    "uid": 53,
+    "discrete": 84,
+    "linear": 84,
+    "physics": 53,
+    "adm": 29,
+    "maom": 15,
+    "mech": 15
+}
