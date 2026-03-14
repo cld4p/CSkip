@@ -65,10 +65,12 @@ function calculateHours(){
     if(val<0 || val==''){
         val=0;
     }
-    var selSub = subListB[subject] - 10;
+    var selSub = (subListB[subject]*0.92).toFixed(0);
 
     if(batchInput.value == "cseB"){
-        selSub.value == subListB[subject];
+        selSub.valueOf == subListB[subject];
+    } else if(batchInput.value == "cseA") {
+        selSub.valueOf == subListA[subject];
     }
 
     val = Math.min(val,selSub);
